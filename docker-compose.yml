@@ -2,13 +2,13 @@ version: '3.1'
 services:
   vpn:
     restart: always
-    image: koluch/dockvp
+    image: koluch/dockvpn
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "1194:1194/udp"
-      - "443:443//udp"
+      - "443:443/udp"
     privileged: true
     hostname: openvpn-server
     container_name: openvpn-server
